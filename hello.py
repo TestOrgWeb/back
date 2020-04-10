@@ -1,1 +1,1 @@
-print("This is a test! Let's hope it works!!!")
+print("This is a test!")
