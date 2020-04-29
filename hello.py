@@ -5,3 +5,8 @@ print("This is branch-1.2")
 print("Adding multiple commits")
 print ("1st commit")
 print ("2nd commit")
+#For loop here
+for i in range(5):
+    print(i)
+print("This is v1")
+print("This is v2")
