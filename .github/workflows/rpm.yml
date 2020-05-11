@@ -8,12 +8,16 @@ jobs:
   signing-artifacts:   
     name: Sign Yum
     runs-on: [ubuntu-16.04]
+    container: 
+      image: amazonlinux
     steps:
       - uses: actions/checkout@v1
 
       - name: Sign And Upload Artifacts
         run: |
-          aws --version
+          yum update -y
+          yum install -y unzip
+          sleep 5
           createrepo --version
       #    curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
       #    unzip awscli-bundle.zip
