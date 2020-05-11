@@ -1,0 +1,26 @@
+name: Release RPM Artifacts to production
+
+on:
+  repository_dispatch:
+    types: [rpm-sign-prod]
+  
+jobs:
+  signing-artifacts:   
+    name: Sign Yum
+    runs-on: [ubuntu-16.04]
+    container: 
+      image: amazonlinux
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Sign And Upload Artifacts
+        run: |
+          yum update -y
+          yum install -y unzip
+          sleep 5
+          aws --version
+          createrepo --version
+      #    curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+      #    unzip awscli-bundle.zip
+      #    ./awscli-bundle/install -b ~/bin/aws
+        
