@@ -8,8 +8,6 @@ jobs:
   signing-artifacts:   
     name: Sign Yum
     runs-on: [ubuntu-16.04]
-    container: 
-      image: amazonlinux
     steps:
       - uses: actions/checkout@v1
 
