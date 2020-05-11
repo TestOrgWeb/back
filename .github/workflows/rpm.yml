@@ -13,9 +13,6 @@ jobs:
 
       - name: Sign And Upload Artifacts
         run: |
-          yum update -y
-          yum install -y unzip
-          sleep 5
           aws --version
           createrepo --version
       #    curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
